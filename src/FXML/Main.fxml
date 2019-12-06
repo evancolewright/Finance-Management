@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="695.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiController">
+<AnchorPane prefHeight="695.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
         <BorderPane layoutX="-2.0" layoutY="-3.0" prefHeight="702.0" prefWidth="1085.0">
             <top>
@@ -81,21 +81,28 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="202.0" prefWidth="273.0">
                             <children>
-                                <Label layoutX="14.0" layoutY="5.0" prefHeight="5.0" prefWidth="115.0" text="Edit Transaction Data:" />
-                                <ChoiceBox disable="true" layoutX="14.0" layoutY="28.0" prefHeight="24.0" prefWidth="150.0" />
-                                <Button disable="true" layoutX="15.0" layoutY="142.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="70.0" text="Alter Data" />
-                                <TextArea disable="true" layoutX="15.0" layoutY="62.0" prefHeight="74.0" prefWidth="246.0" />
+                                <Label disable="true" layoutX="14.0" layoutY="5.0" prefHeight="5.0" prefWidth="115.0" text="Edit Transaction Data:" />
+                                <ChoiceBox fx:id="alterDataChoice" disable="true" layoutX="14.0" layoutY="28.0" prefHeight="24.0" prefWidth="150.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:id="deleteTransaction" fx:value="Delete Record" />
+                                            <String fx:id="changeDescription" fx:value="Edit Description" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                                <TextArea fx:id="editDescriptionArea" disable="true" layoutX="15.0" layoutY="62.0" prefHeight="74.0" prefWidth="246.0" />
+                                <Button fx:id="alterDataBtn" disable="true" layoutX="15.0" layoutY="142.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="70.0" text="Alter Data" />
                             </children></AnchorPane>
                         <AnchorPane prefHeight="327.0" prefWidth="273.0">
                             <children>
-                                <Label layoutX="14.0" layoutY="14.0" text="Filter Transaction Data:" />
+                                <Label disable="true" layoutX="14.0" layoutY="14.0" text="Filter Transaction Data:" />
                                 <DatePicker disable="true" layoutX="15.0" layoutY="38.0" prefHeight="25.0" prefWidth="190.0" />
-                                <Label layoutX="15.0" layoutY="74.0" text="Minimum Amount:" />
+                                <Label disable="true" layoutX="15.0" layoutY="74.0" text="Minimum Amount:" />
                                 <TextField disable="true" layoutX="15.0" layoutY="100.0" />
-                                <Label layoutX="15.0" layoutY="135.0" text="Maximum Amount:" />
+                                <Label disable="true" layoutX="15.0" layoutY="135.0" text="Maximum Amount:" />
                                 <TextField disable="true" layoutX="15.0" layoutY="160.0" />
                                 <ChoiceBox disable="true" layoutX="15.0" layoutY="198.0" prefHeight="30.0" prefWidth="150.0" />
-                        <CheckBox disable="true" layoutX="14.0" layoutY="245.0" mnemonicParsing="false" text="Filter Transaction Data" />
+                                <CheckBox disable="true" layoutX="14.0" layoutY="245.0" mnemonicParsing="false" text="Filter Transaction Data" />
                             </children></AnchorPane>
                     </children>
                 </VBox>

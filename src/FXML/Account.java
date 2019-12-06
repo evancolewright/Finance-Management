@@ -12,32 +12,29 @@ public class Account {
     private Date dateCreated;
     private ArrayList<Transaction> transactions = new ArrayList<>();
 
-    Account(){
+    public Account(){
         this.id = 0;
         this.balance = 0;
         this.annualInterestRate = 0;
         this.dateCreated = new Date();
     }
 
-    Account(int id, double balance){
+    public Account(int id, double balance){
         this.id = id;
         this.balance = balance;
         this.annualInterestRate = 0;
         this.dateCreated = new Date();
     }
 
-    Account(int id, String name, double balance){
-        this.id = id;
+    public Account(int id, String name, double balance){
+        this(id, balance);
         this.name = name;
-        this.balance = balance;
         this.annualInterestRate = 0;
         this.dateCreated = new Date();
     }
 
     public Account(int id, String name, double balance, double annualInterestRate){
-        this.id = id;
-        this.name = name;
-        this.balance = balance;
+        this(id, name, balance);
         this.annualInterestRate = annualInterestRate;
         this.dateCreated = new Date();
     }
