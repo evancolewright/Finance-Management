@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 public class Main extends Application {
     @Test
-    public void testMethod(){
+    public void testMethod() {
         Account newAccount = new Account(1122, "George", 1000, 1.5);
         newAccount.deposit(30, "PC Checkup");
         newAccount.deposit(40, "Phone Battery Replacement");
@@ -28,19 +28,24 @@ public class Main extends Application {
     private static final String PASSWORD = "";
     private static final String CONNECTION = "jdbc:mysql://localhost/finance_management";
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException {
+        Connection con = null;
         try {
-            Connection con = null;
             con = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
-        }catch(SQLException exception){
-            System.out.println("Unable to connect to our database.");
+            System.out.println("Connected to Database!");
+        } catch (SQLException exception) {
+            System.out.println(exception.toString());
+        } finally {
+            if (con != null) {
+                con.close();
+            }
         }
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root=FXMLLoader.load(getClass().getResource("Main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         Scene scene = new Scene(root, 1100, 720);
         primaryStage.setTitle("FXML Welcome");
         primaryStage.setScene(scene);
