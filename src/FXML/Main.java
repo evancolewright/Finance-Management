@@ -7,6 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.junit.Test;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class Main extends Application {
     @Test
     public void testMethod(){
@@ -25,6 +29,12 @@ public class Main extends Application {
     private static final String CONNECTION = "jdbc:mysql://localhost/finance_management";
 
     public static void main(String[] args){
+        try {
+            Connection con = null;
+            con = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
+        }catch(SQLException exception){
+            System.out.println("Unable to connect to our database.");
+        }
         launch(args);
     }
 
