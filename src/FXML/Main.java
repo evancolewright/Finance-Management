@@ -20,6 +20,10 @@ public class Main extends Application {
         System.out.println(newAccount.toString());
     }
 
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "";
+    private static final String CONNECTION = "jdbc:mysql://localhost/finance_management";
+
     public static void main(String[] args){
         launch(args);
     }
