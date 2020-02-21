@@ -2,18 +2,25 @@
     Johnathan R. Burgess
     December 5th, 2019, 3:28pm ET
  */
-import javafx.application.Platform;
+
 import FXML.Account;
+import FXML.Transaction;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import FXML.Transaction;
+
+import java.sql.*;
 
 /*
     This is our controller.
  */
 
 public class Controller {
+
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "";
+    private static final String CONNECTION = "jdbc:mysql://localhost/finance_management";
 
     //=================================================================================================================
     // Class Attributes
@@ -34,6 +41,19 @@ public class Controller {
     @FXML
     private TextArea editDescriptionArea;
 
+    //==============================================================
+    // LOGIN FORM WIDGETS
+    //==============================================================
+    @FXML
+    private TextField login_username_field;
+    @FXML
+    private PasswordField login_password_field;
+    @FXML
+    private Label login_error_label;
+    @FXML
+    private Button login_btn;
+    //==============================================================
+
     //=================================================================================================================
 
 
@@ -46,7 +66,7 @@ public class Controller {
     }
 
     @FXML
-    public void handleSubmitTransactionAction() {
+    public void handleSubmitTransactionAction() throws SQLException {
 
         try {
 
@@ -54,11 +74,24 @@ public class Controller {
             double amount = Double.parseDouble(new_transaction_amount_field.getText());
 
             if (new_transaction_type_choice.getSelectionModel().getSelectedItem().toString().equals("Deposit")) {
+
                 Transaction transaction = newAccount.deposit(amount, new_transaction_description_field.getText());
                 ObservableList<TransactionView> data = tableView.getItems();
                 data.add(new TransactionView(String.valueOf(transaction.getType()), String.valueOf(transaction.getDate()),
                         String.valueOf(transaction.getAmount()), String.valueOf(transaction.getDescription()),
                         String.valueOf(transaction.getBalance())));
+
+                String query = "SELECT * FROM Transactions";
+                try(Connection con = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery(query)){
+                    if(rs.next()){
+                        System.out.println(rs.getString(1));
+                    }
+                } catch (SQLException exception) {
+                    System.out.println(exception.toString());
+                }
+
             } else if (new_transaction_type_choice.getSelectionModel().getSelectedItem().toString().equals("Withdraw")) {
 
                 // checks to make sure the user has enough money in their account.
