@@ -55,8 +55,25 @@ public class Controller {
     //==============================================================
 
     //=================================================================================================================
+    @FXML
+    public void handleLoginSubmit() throws SQLException {
+        String username = login_username_field.getText().toString();
+        String query = "SELECT username, passwd FROM accounts WHERE username LIKE '"+username+"';";
+        try{
+            Connection con = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            if(rs.getString("passwd").equals(login_password_field.getText().toString())){
+                LoginSuccess();
+            }
+        } catch (SQLException exception) {
+            System.out.println(exception.toString());
+        }
+    }
 
-
+    public void LoginSuccess(){
+        System.out.println("Login success!");
+    }
     //=================================================================================================================
     // Class Methods
     //=================================================================================================================
@@ -66,7 +83,7 @@ public class Controller {
     }
 
     @FXML
-    public void handleSubmitTransactionAction() throws SQLException {
+    public void handleSubmitTransactionAction(){
 
         try {
 
@@ -80,17 +97,6 @@ public class Controller {
                 data.add(new TransactionView(String.valueOf(transaction.getType()), String.valueOf(transaction.getDate()),
                         String.valueOf(transaction.getAmount()), String.valueOf(transaction.getDescription()),
                         String.valueOf(transaction.getBalance())));
-
-                String query = "SELECT * FROM Transactions";
-                try(Connection con = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
-                Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery(query)){
-                    if(rs.next()){
-                        System.out.println(rs.getString(1));
-                    }
-                } catch (SQLException exception) {
-                    System.out.println(exception.toString());
-                }
 
             } else if (new_transaction_type_choice.getSelectionModel().getSelectedItem().toString().equals("Withdraw")) {
 
