@@ -1,4 +1,4 @@
-package FXML;
+package main.FXML;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +32,7 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Scene scene = new Scene(root, 1100, 720);
-        primaryStage.setTitle("FXML Welcome");
+        primaryStage.setTitle("main.FXML Welcome");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

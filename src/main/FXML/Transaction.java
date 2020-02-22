@@ -1,4 +1,4 @@
-package FXML;
+package main.FXML;
 
 import java.util.Date;
 

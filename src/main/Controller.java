@@ -1,10 +1,10 @@
-/*
+package main;/*
     Johnathan R. Burgess
     December 5th, 2019, 3:28pm ET
  */
 
-import FXML.Account;
-import FXML.Transaction;
+import main.FXML.Account;
+import main.FXML.Transaction;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -122,7 +122,7 @@ public class Controller {
         }
     }
 /*
-    @FXML
+    @main.FXML
     public void handleAlterDataAction(){
         try {
 

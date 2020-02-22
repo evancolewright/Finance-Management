@@ -1,3 +1,5 @@
+package main;
+
 import javafx.beans.property.SimpleStringProperty;
 
 public class TransactionView {
