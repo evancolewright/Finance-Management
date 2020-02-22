@@ -9,7 +9,7 @@ public class Transaction {
     private double balance;
     private String description;
 
-    Transaction(char type, double amount, double balance, String description){
+    public Transaction(char type, double amount, double balance, String description){
         this.date = new Date();
         this.type = type;
         this.amount = amount;
