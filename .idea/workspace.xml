@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="creating more unit tests for Account class">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="fixed our Controller.handleLoginSubmit() method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finance-Management/main/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finance-Management/main/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/AccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/AccountTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +112,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.AccountTests.testAccountDepositNewBalance">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -152,6 +151,27 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountTests.testAccountDepositNewBalance" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Finance-Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.AccountTests" />
+      <option name="METHOD_NAME" value="testAccountDepositNewBalance" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -233,6 +253,7 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.AccountTests.testAccountGetMonthlyInterest" />
       <item itemvalue="JUnit.AccountTests.testAccountWithdrawNewBalance" />
+      <item itemvalue="JUnit.AccountTests.testAccountDepositNewBalance" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -336,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582345081654</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed our Controller.handleLoginSubmit() method">
+      <created>1582346133058</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1582346133058</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -354,9 +382,14 @@
     <MESSAGE value="cleaning up variable naming in Controller.java" />
     <MESSAGE value="creating unit tests for Account class" />
     <MESSAGE value="creating more unit tests for Account class" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating more unit tests for Account class" />
+    <MESSAGE value="fixed our Controller.handleLoginSubmit() method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed our Controller.handleLoginSubmit() method" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="506" y="176" width="898" height="695" key="#AccountTests.testAccountDepositNewBalance" timestamp="1582400149105">
+      <screen x="0" y="27" width="1920" height="998" />
+    </state>
+    <state x="506" y="176" width="898" height="695" key="#AccountTests.testAccountDepositNewBalance/0.27.1920.998@0.27.1920.998" timestamp="1582400149105" />
     <state x="10" y="176" width="898" height="695" key="#AccountTests.testAccountGetMonthlyInterest" timestamp="1582342523389">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
@@ -398,37 +431,37 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="821" y="266" width="324" height="572" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578091762700" />
-    <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2" timestamp="1582345081585">
+    <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2" timestamp="1582346132991">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2/0.27.1920.998@0.27.1920.998" timestamp="1582345081585" />
+    <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2/0.27.1920.998@0.27.1920.998" timestamp="1582346132991" />
     <state x="574" y="336" width="735" height="509" key="FileChooserDialogImpl" timestamp="1582216636728">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
     <state x="574" y="336" width="735" height="509" key="FileChooserDialogImpl/0.27.1920.998@0.27.1920.998" timestamp="1582216636728" />
     <state x="621" y="353" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1578094398524" />
-    <state width="1874" height="796" key="GridCell.Tab.0.bottom" timestamp="1582346111794">
+    <state width="1874" height="796" key="GridCell.Tab.0.bottom" timestamp="1582400157571">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="796" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" timestamp="1582346111794" />
+    <state width="1874" height="796" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" timestamp="1582400157571" />
     <state width="1874" height="872" key="GridCell.Tab.0.bottom/0.643.3840.1053@0.643.3840.1053" timestamp="1578163608722" />
     <state width="1807" height="208" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1578162315115" />
-    <state width="1874" height="796" key="GridCell.Tab.0.center" timestamp="1582346111791">
+    <state width="1874" height="796" key="GridCell.Tab.0.center" timestamp="1582400157569">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="796" key="GridCell.Tab.0.center/0.27.1920.998@0.27.1920.998" timestamp="1582346111791" />
+    <state width="1874" height="796" key="GridCell.Tab.0.center/0.27.1920.998@0.27.1920.998" timestamp="1582400157569" />
     <state width="1874" height="872" key="GridCell.Tab.0.center/0.643.3840.1053@0.643.3840.1053" timestamp="1578163608719" />
     <state width="1807" height="208" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1578162315115" />
-    <state width="1874" height="796" key="GridCell.Tab.0.left" timestamp="1582346111790">
+    <state width="1874" height="796" key="GridCell.Tab.0.left" timestamp="1582400157567">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="796" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" timestamp="1582346111790" />
+    <state width="1874" height="796" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" timestamp="1582400157567" />
     <state width="1874" height="872" key="GridCell.Tab.0.left/0.643.3840.1053@0.643.3840.1053" timestamp="1578163608718" />
     <state width="1807" height="208" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1578162315115" />
-    <state width="1874" height="796" key="GridCell.Tab.0.right" timestamp="1582346111793">
+    <state width="1874" height="796" key="GridCell.Tab.0.right" timestamp="1582400157570">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="796" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" timestamp="1582346111793" />
+    <state width="1874" height="796" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" timestamp="1582400157570" />
     <state width="1874" height="872" key="GridCell.Tab.0.right/0.643.3840.1053@0.643.3840.1053" timestamp="1578163608721" />
     <state width="1807" height="208" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1578162315115" />
     <state width="1874" height="322" key="GridCell.Tab.1.bottom" timestamp="1582345602799">
@@ -452,18 +485,18 @@
     </state>
     <state x="446" y="90" width="1024" height="841" key="SettingsEditor/0.27.1920.998@0.27.1920.998" timestamp="1582216637842" />
     <state x="497" y="93" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1578162227059" />
-    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser" timestamp="1582345114238">
+    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser" timestamp="1582346142221">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser/0.27.1920.998@0.27.1920.998" timestamp="1582345114238" />
-    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1582345082987">
+    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser/0.27.1920.998@0.27.1920.998" timestamp="1582346142221" />
+    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1582346135955">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2/0.27.1920.998@0.27.1920.998" timestamp="1582345082987" />
-    <state x="603" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1582340733029">
+    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2/0.27.1920.998@0.27.1920.998" timestamp="1582346135955" />
+    <state x="603" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1582399990926">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state x="603" y="362" key="com.intellij.ide.util.TipDialog/0.27.1920.998@0.27.1920.998" timestamp="1582340733029" />
+    <state x="603" y="362" key="com.intellij.ide.util.TipDialog/0.27.1920.998@0.27.1920.998" timestamp="1582399990926" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578091529040" />
     <state x="27" y="422" width="646" height="204" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582341868225">
       <screen x="0" y="27" width="1920" height="998" />
