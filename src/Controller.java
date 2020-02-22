@@ -26,7 +26,7 @@ public class Controller {
     // Class Attributes
     //=================================================================================================================
     // Our new account object
-    Account newAccount = new Account(1, "", 0, 1.5);
+    Account new_account = new Account(1, "", 0, 1.5);
 
     @FXML
     private TextField new_transaction_amount_field;
@@ -92,17 +92,17 @@ public class Controller {
 
             if (new_transaction_type_choice.getSelectionModel().getSelectedItem().toString().equals("Deposit")) {
 
-                Transaction transaction = newAccount.deposit(amount, new_transaction_description_field.getText());
-                ObservableList<TransactionView> data = tableView.getItems();
-                data.add(new TransactionView(String.valueOf(transaction.getType()), String.valueOf(transaction.getDate()),
+                Transaction transaction = new_account.deposit(amount, new_transaction_description_field.getText());
+                ObservableList<TransactionView> viewable_data = tableView.getItems();
+                viewable_data.add(new TransactionView(String.valueOf(transaction.getType()), String.valueOf(transaction.getDate()),
                         String.valueOf(transaction.getAmount()), String.valueOf(transaction.getDescription()),
                         String.valueOf(transaction.getBalance())));
 
             } else if (new_transaction_type_choice.getSelectionModel().getSelectedItem().toString().equals("Withdraw")) {
 
                 // checks to make sure the user has enough money in their account.
-                if (newAccount.getBalance() >= amount) {
-                    Transaction transaction = newAccount.withdraw(amount, new_transaction_description_field.getText());
+                if (new_account.getBalance() >= amount) {
+                    Transaction transaction = new_account.withdraw(amount, new_transaction_description_field.getText());
                     ObservableList<TransactionView> data = tableView.getItems();
                     data.add(new TransactionView(String.valueOf(transaction.getType()), String.valueOf(transaction.getDate()),
                             String.valueOf(transaction.getAmount()), String.valueOf(transaction.getDescription()),
