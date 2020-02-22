@@ -57,14 +57,21 @@ public class Controller {
     //=================================================================================================================
     @FXML
     public void handleLoginSubmit() throws SQLException {
-        String username = login_username_field.getText().toString();
+        String username = login_username_field.getText();
         String query = "SELECT username, passwd FROM accounts WHERE username LIKE '"+username+"';";
         try{
             Connection con = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query);
-            if(rs.getString("passwd").equals(login_password_field.getText().toString())){
-                LoginSuccess();
+            System.out.println(st);
+            System.out.println(rs);
+            if(rs.next()){
+                String password = rs.getString("passwd").toString();
+                if(password.equals(login_password_field.getText())){
+                    LoginSuccess();
+                }else{
+                    LoginFailure();
+                }
             }
         } catch (SQLException exception) {
             System.out.println(exception.toString());
@@ -73,6 +80,9 @@ public class Controller {
 
     public void LoginSuccess(){
         System.out.println("Login success!");
+    }
+    public void LoginFailure(){
+        System.out.println("Login Failure!");
     }
     //=================================================================================================================
     // Class Methods
