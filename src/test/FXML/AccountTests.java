@@ -1,3 +1,5 @@
+package FXML;
+
 import FXML.Account;
 import org.junit.After;
 import org.junit.Test;

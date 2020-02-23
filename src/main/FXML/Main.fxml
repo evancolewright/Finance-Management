@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="695.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+<AnchorPane prefHeight="695.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
         <BorderPane layoutX="-2.0" layoutY="-3.0" prefHeight="702.0" prefWidth="1085.0">
             <top>

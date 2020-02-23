@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="wrote another unit test for 3 test cases for account deposit">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="refactoring">
+      <change afterPath="$PROJECT_DIR$/src/test/FXML/TransactionTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Finance-Management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Finance-Management.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finance-Management/test/AccountTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finance-Management/test/AccountTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finance-Management/main/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finance-Management/main/FXML/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finance-Management/main/FXML/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finance-Management/main/FXML/Transaction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finance-Management/main/TransactionView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finance-Management/test/AccountTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/FXML/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/FXML/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/AccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/AccountTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/FXML/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/FXML/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/FXML/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/FXML/Main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/FXML/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/FXML/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TransactionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TransactionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/AccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/FXML/AccountTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +75,7 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="FxmlFile" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -101,8 +112,10 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/javafx-sdk-13.0.1" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.20467836" />
@@ -111,7 +124,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="FXML" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="FXML" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -119,7 +139,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountTests.testAccountDepositNewBalance">
+  <component name="RunManager" selected="JUnit.TransactionTests.getDate">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -170,8 +190,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AccountTests" />
+      <option name="PACKAGE_NAME" value="FXML" />
+      <option name="MAIN_CLASS_NAME" value="FXML.AccountTests" />
       <option name="METHOD_NAME" value="testAccountDepositNewBalance" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
@@ -191,8 +211,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AccountTests" />
+      <option name="PACKAGE_NAME" value="FXML" />
+      <option name="MAIN_CLASS_NAME" value="FXML.AccountTests" />
       <option name="METHOD_NAME" value="testAccountGetMonthlyInterest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
@@ -212,9 +232,30 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AccountTests" />
+      <option name="PACKAGE_NAME" value="FXML" />
+      <option name="MAIN_CLASS_NAME" value="FXML.AccountTests" />
       <option name="METHOD_NAME" value="testAccountWithdrawNewBalance" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransactionTests.getDate" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Finance-Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FXML.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="FXML" />
+      <option name="MAIN_CLASS_NAME" value="FXML.TransactionTests" />
+      <option name="METHOD_NAME" value="getDate" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -261,6 +302,7 @@
       <item itemvalue="JUnit.AccountTests.testAccountGetMonthlyInterest" />
       <item itemvalue="JUnit.AccountTests.testAccountWithdrawNewBalance" />
       <item itemvalue="JUnit.AccountTests.testAccountDepositNewBalance" />
+      <item itemvalue="JUnit.TransactionTests.getDate" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -378,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582400191935</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="refactoring">
+      <created>1582493084844</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1582493084844</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -398,7 +447,8 @@
     <MESSAGE value="creating more unit tests for Account class" />
     <MESSAGE value="fixed our Controller.handleLoginSubmit() method" />
     <MESSAGE value="wrote another unit test for 3 test cases for account deposit" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote another unit test for 3 test cases for account deposit" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="WindowStateProjectService">
     <state x="506" y="176" width="898" height="695" key="#AccountTests.testAccountDepositNewBalance" timestamp="1582400149105">
@@ -429,6 +479,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="214" width="800" height="677" key="#Project_Structure/67.27.1853.1053@67.27.1853.1053" timestamp="1578091888564" />
+    <state x="506" y="321" width="898" height="437" key="#TransactionTests.getDate" timestamp="1582493474594">
+      <screen x="0" y="643" width="1920" height="437" />
+    </state>
+    <state x="506" y="321" width="898" height="437" key="#TransactionTests.getDate/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493474594" />
     <state x="398" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582345290786">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
@@ -446,42 +500,47 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="821" y="266" width="324" height="572" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578091762700" />
-    <state x="713" y="400" width="494" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1582492971980">
+    <state x="713" y="400" width="484" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1582493579192">
       <screen x="0" y="643" width="1920" height="437" />
     </state>
-    <state x="713" y="400" width="494" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582492971980" />
-    <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2" timestamp="1582400191726">
-      <screen x="0" y="27" width="1920" height="998" />
+    <state x="713" y="400" width="484" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493579192" />
+    <state x="180" y="46" width="824" height="776" key="CommitChangelistDialog2" timestamp="1582493084729">
+      <screen x="0" y="643" width="1920" height="437" />
     </state>
     <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2/0.27.1920.998@0.27.1920.998" timestamp="1582400191726" />
+    <state x="180" y="46" width="824" height="776" key="CommitChangelistDialog2/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493084729" />
     <state x="574" y="336" width="735" height="509" key="FileChooserDialogImpl" timestamp="1582216636728">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
     <state x="574" y="336" width="735" height="509" key="FileChooserDialogImpl/0.27.1920.998@0.27.1920.998" timestamp="1582216636728" />
     <state x="621" y="353" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1578094398524" />
-    <state width="1874" height="796" key="GridCell.Tab.0.bottom" timestamp="1582400157571">
-      <screen x="0" y="27" width="1920" height="998" />
+    <state width="1874" height="873" key="GridCell.Tab.0.bottom" timestamp="1582493632211">
+      <screen x="0" y="643" width="1920" height="437" />
     </state>
     <state width="1874" height="796" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" timestamp="1582400157571" />
     <state width="1874" height="872" key="GridCell.Tab.0.bottom/0.643.3840.1053@0.643.3840.1053" timestamp="1578163608722" />
+    <state width="1874" height="873" key="GridCell.Tab.0.bottom/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493632211" />
     <state width="1807" height="208" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1578162315115" />
-    <state width="1874" height="796" key="GridCell.Tab.0.center" timestamp="1582400157569">
-      <screen x="0" y="27" width="1920" height="998" />
+    <state width="1874" height="873" key="GridCell.Tab.0.center" timestamp="1582493632210">
+      <screen x="0" y="643" width="1920" height="437" />
     </state>
     <state width="1874" height="796" key="GridCell.Tab.0.center/0.27.1920.998@0.27.1920.998" timestamp="1582400157569" />
     <state width="1874" height="872" key="GridCell.Tab.0.center/0.643.3840.1053@0.643.3840.1053" timestamp="1578163608719" />
+    <state width="1874" height="873" key="GridCell.Tab.0.center/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493632210" />
     <state width="1807" height="208" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1578162315115" />
-    <state width="1874" height="796" key="GridCell.Tab.0.left" timestamp="1582400157567">
-      <screen x="0" y="27" width="1920" height="998" />
+    <state width="1874" height="873" key="GridCell.Tab.0.left" timestamp="1582493632210">
+      <screen x="0" y="643" width="1920" height="437" />
     </state>
     <state width="1874" height="796" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" timestamp="1582400157567" />
     <state width="1874" height="872" key="GridCell.Tab.0.left/0.643.3840.1053@0.643.3840.1053" timestamp="1578163608718" />
+    <state width="1874" height="873" key="GridCell.Tab.0.left/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493632210" />
     <state width="1807" height="208" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1578162315115" />
-    <state width="1874" height="796" key="GridCell.Tab.0.right" timestamp="1582400157570">
-      <screen x="0" y="27" width="1920" height="998" />
+    <state width="1874" height="873" key="GridCell.Tab.0.right" timestamp="1582493632210">
+      <screen x="0" y="643" width="1920" height="437" />
     </state>
     <state width="1874" height="796" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" timestamp="1582400157570" />
     <state width="1874" height="872" key="GridCell.Tab.0.right/0.643.3840.1053@0.643.3840.1053" timestamp="1578163608721" />
+    <state width="1874" height="873" key="GridCell.Tab.0.right/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493632210" />
     <state width="1807" height="208" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1578162315115" />
     <state width="1874" height="322" key="GridCell.Tab.1.bottom" timestamp="1582345602799">
       <screen x="0" y="27" width="1920" height="998" />
@@ -505,18 +564,20 @@
     <state x="446" y="90" width="1024" height="841" key="SettingsEditor/0.27.1920.998@0.27.1920.998" timestamp="1582216637842" />
     <state x="471" y="209" width="855" height="559" key="SettingsEditor/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582492950265" />
     <state x="497" y="93" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1578162227059" />
-    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser" timestamp="1582400210312">
-      <screen x="0" y="27" width="1920" height="998" />
-    </state>
-    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser/0.27.1920.998@0.27.1920.998" timestamp="1582400210312" />
-    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1582400197485">
-      <screen x="0" y="27" width="1920" height="998" />
-    </state>
-    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2/0.27.1920.998@0.27.1920.998" timestamp="1582400197485" />
-    <state x="732" y="321" width="446" height="433" key="chooseDestDirectoryDialog" timestamp="1582493020381">
+    <state x="298" y="825" width="354" height="156" key="VCS.ChangelistChooser" timestamp="1582493098693">
       <screen x="0" y="643" width="1920" height="437" />
     </state>
-    <state x="732" y="321" width="446" height="433" key="chooseDestDirectoryDialog/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493020381" />
+    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser/0.27.1920.998@0.27.1920.998" timestamp="1582400210312" />
+    <state x="298" y="825" width="354" height="156" key="VCS.ChangelistChooser/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493098693" />
+    <state x="75" y="746" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1582493087400">
+      <screen x="0" y="643" width="1920" height="437" />
+    </state>
+    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2/0.27.1920.998@0.27.1920.998" timestamp="1582400197485" />
+    <state x="75" y="746" key="Vcs.Push.Dialog.v2/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493087400" />
+    <state x="732" y="321" width="446" height="433" key="chooseDestDirectoryDialog" timestamp="1582493569069">
+      <screen x="0" y="643" width="1920" height="437" />
+    </state>
+    <state x="732" y="321" width="446" height="433" key="chooseDestDirectoryDialog/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493569069" />
     <state x="604" y="735" key="com.intellij.ide.util.TipDialog" timestamp="1582482759299">
       <screen x="0" y="643" width="1920" height="437" />
     </state>
@@ -527,6 +588,10 @@
       <screen x="0" y="27" width="1920" height="998" />
     </state>
     <state x="27" y="422" width="646" height="204" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.27.1920.998@0.27.1920.998" timestamp="1582341868225" />
+    <state x="700" y="321" width="509" height="433" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1582493250646">
+      <screen x="0" y="643" width="1920" height="437" />
+    </state>
+    <state x="700" y="321" width="509" height="433" key="com.intellij.testIntegration.createTest.CreateTestDialog/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493250646" />
     <state x="243" y="147" width="1372" height="588" key="new project wizard" timestamp="1582218267934">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
