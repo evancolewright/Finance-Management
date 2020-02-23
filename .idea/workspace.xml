@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="fixed our Controller.handleLoginSubmit() method">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="wrote another unit test for 3 test cases for account deposit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Finance-Management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Finance-Management.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finance-Management/test/AccountTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finance-Management/test/AccountTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/FXML/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/FXML/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/AccountTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/AccountTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,14 +102,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/javafx-sdk-13.0.1" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.20467836" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src" />
@@ -159,12 +166,12 @@
       <module name="Finance-Management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.AccountTests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AccountTests" />
       <option name="METHOD_NAME" value="testAccountDepositNewBalance" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
@@ -180,12 +187,12 @@
       <module name="Finance-Management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.AccountTests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AccountTests" />
       <option name="METHOD_NAME" value="testAccountGetMonthlyInterest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
@@ -201,12 +208,12 @@
       <module name="Finance-Management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.AccountTests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AccountTests" />
       <option name="METHOD_NAME" value="testAccountWithdrawNewBalance" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
@@ -364,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582346133058</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="wrote another unit test for 3 test cases for account deposit">
+      <created>1582400191935</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1582400191935</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -383,7 +397,8 @@
     <MESSAGE value="creating unit tests for Account class" />
     <MESSAGE value="creating more unit tests for Account class" />
     <MESSAGE value="fixed our Controller.handleLoginSubmit() method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed our Controller.handleLoginSubmit() method" />
+    <MESSAGE value="wrote another unit test for 3 test cases for account deposit" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrote another unit test for 3 test cases for account deposit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="506" y="176" width="898" height="695" key="#AccountTests.testAccountDepositNewBalance" timestamp="1582400149105">
@@ -431,10 +446,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="821" y="266" width="324" height="572" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578091762700" />
-    <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2" timestamp="1582346132991">
+    <state x="713" y="400" width="494" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1582492971980">
+      <screen x="0" y="643" width="1920" height="437" />
+    </state>
+    <state x="713" y="400" width="494" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582492971980" />
+    <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2" timestamp="1582400191726">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2/0.27.1920.998@0.27.1920.998" timestamp="1582346132991" />
+    <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2/0.27.1920.998@0.27.1920.998" timestamp="1582400191726" />
     <state x="574" y="336" width="735" height="509" key="FileChooserDialogImpl" timestamp="1582216636728">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
@@ -480,23 +499,29 @@
       <screen x="0" y="27" width="1920" height="998" />
     </state>
     <state width="1874" height="322" key="GridCell.Tab.1.right/0.27.1920.998@0.27.1920.998" timestamp="1582345602799" />
-    <state x="446" y="90" width="1024" height="841" key="SettingsEditor" timestamp="1582216637842">
-      <screen x="0" y="27" width="1920" height="998" />
+    <state x="471" y="209" width="855" height="559" key="SettingsEditor" timestamp="1582492950265">
+      <screen x="0" y="643" width="1920" height="437" />
     </state>
     <state x="446" y="90" width="1024" height="841" key="SettingsEditor/0.27.1920.998@0.27.1920.998" timestamp="1582216637842" />
+    <state x="471" y="209" width="855" height="559" key="SettingsEditor/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582492950265" />
     <state x="497" y="93" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1578162227059" />
-    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser" timestamp="1582346142221">
+    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser" timestamp="1582400210312">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser/0.27.1920.998@0.27.1920.998" timestamp="1582346142221" />
-    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1582346135955">
+    <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser/0.27.1920.998@0.27.1920.998" timestamp="1582400210312" />
+    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1582400197485">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2/0.27.1920.998@0.27.1920.998" timestamp="1582346135955" />
-    <state x="603" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1582399990926">
-      <screen x="0" y="27" width="1920" height="998" />
+    <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2/0.27.1920.998@0.27.1920.998" timestamp="1582400197485" />
+    <state x="732" y="321" width="446" height="433" key="chooseDestDirectoryDialog" timestamp="1582493020381">
+      <screen x="0" y="643" width="1920" height="437" />
+    </state>
+    <state x="732" y="321" width="446" height="433" key="chooseDestDirectoryDialog/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493020381" />
+    <state x="604" y="735" key="com.intellij.ide.util.TipDialog" timestamp="1582482759299">
+      <screen x="0" y="643" width="1920" height="437" />
     </state>
     <state x="603" y="362" key="com.intellij.ide.util.TipDialog/0.27.1920.998@0.27.1920.998" timestamp="1582399990926" />
+    <state x="604" y="735" key="com.intellij.ide.util.TipDialog/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582482759299" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578091529040" />
     <state x="27" y="422" width="646" height="204" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582341868225">
       <screen x="0" y="27" width="1920" height="998" />

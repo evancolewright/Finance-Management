@@ -1,4 +1,4 @@
-package main.FXML;
+package FXML;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,7 +10,7 @@ public class Account {
     private double balance;
     private double annualInterestRate;
     private Date dateCreated;
-    private ArrayList<Transaction> transactions = new ArrayList<>();
+    private ArrayList<main.FXML.Transaction> transactions = new ArrayList<>();
 
     public Account(){
         this.id = 0;
@@ -83,16 +83,16 @@ public class Account {
         return this.balance*this.getMonthlyInterestRate();
     }
 
-    public Transaction withdraw(double amount, String description){
+    public main.FXML.Transaction withdraw(double amount, String description){
         this.balance -= amount;
-        Transaction transaction = new Transaction('W', amount, this.balance, description);
+        main.FXML.Transaction transaction = new main.FXML.Transaction('W', amount, this.balance, description);
         transactions.add(transaction);
         return transaction;
     }
 
-    public Transaction deposit(double amount, String description){
+    public main.FXML.Transaction deposit(double amount, String description){
         this.balance += amount;
-        Transaction transaction = new Transaction('D', amount, this.balance, description);
+        main.FXML.Transaction transaction = new main.FXML.Transaction('D', amount, this.balance, description);
         transactions.add(transaction);
         return transaction;
     }
@@ -104,7 +104,7 @@ public class Account {
                 "Balance.....................: $" + balance + "\n" +
                 "Annual Interest Rate........: " + annualInterestRate + "%\n" +
                 "==============================Transactions============================\n";
-        for(Transaction transaction : transactions){
+        for(main.FXML.Transaction transaction : transactions){
             output += "-------------------------------------------------------------------------\n";
             output += transaction.getType() + ".\t"+"$"+transaction.getAmount()+"\t"+transaction.getDescription()+"\n";
             output += "Remaining Account Balance: $" + transaction.getBalance() + "\tDate: "+transaction.getDate()+"\n";

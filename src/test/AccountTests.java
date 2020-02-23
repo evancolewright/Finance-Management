@@ -1,12 +1,8 @@
-
-package test;
-
-import main.FXML.Account;
+import FXML.Account;
 import org.junit.After;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-
 
 public class AccountTests{
 
