@@ -1,10 +1,15 @@
+import FXML.Account;
+import FXML.Transaction;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import FXML.Account;
-import FXML.Transaction;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.*;
 
 /*
@@ -64,11 +69,16 @@ public class Controller {
                 String password = rs.getString("passwd").toString();
                 if(password.equals(login_password_field.getText())){
                     LoginSuccess();
+                    Stage primaryStage  = new Stage();
+                    Parent root = FXMLLoader.load(getClass().getResource("/FXML/Main.fxml"));
+                    Scene scene = new Scene(root);
+                    primaryStage.setScene(scene);
+                    primaryStage.show();
                 }else{
                     LoginFailure();
                 }
             }
-        } catch (SQLException exception) {
+        } catch (SQLException | IOException exception) {
             System.out.println(exception.toString());
         }
     }
@@ -79,6 +89,8 @@ public class Controller {
     public void LoginFailure(){
         System.out.println("Login Failure!");
     }
+
+
     //=================================================================================================================
     // Class Methods
     //=================================================================================================================
