@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 19, 2020 at 02:22 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Host: 127.0.0.1
+-- Generation Time: Dec 09, 2019 at 07:57 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,20 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `accounts` (
   `accountID` int(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `balance` double NOT NULL,
-  `passwd` varchar(255) NOT NULL COMMENT 'User login password',
   `annualInterestRate` double NOT NULL,
   `dateCreated` datetime NOT NULL DEFAULT current_timestamp(),
-  `transactions` text DEFAULT NULL COMMENT 'VarChar too small'
+  `transactions` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `accounts`
---
-
-INSERT INTO `accounts` (`accountID`, `username`, `balance`, `passwd`, `annualInterestRate`, `dateCreated`, `transactions`) VALUES
-(1, 'rburgess', 4500, 'root', 0.02, '2020-02-21 14:49:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -53,10 +45,11 @@ INSERT INTO `accounts` (`accountID`, `username`, `balance`, `passwd`, `annualInt
 
 CREATE TABLE `transactions` (
   `transactionID` int(11) NOT NULL,
-  `accountID` int(11) NOT NULL,
+  `purchaserID` int(11) NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp(),
   `type` varchar(1) NOT NULL,
   `amount` double NOT NULL,
+  `balance` double NOT NULL,
   `description` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -84,7 +77,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `accountID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `accountID` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `transactions`
