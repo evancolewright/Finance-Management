@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="updated SQL setup file">
-      <change afterPath="$PROJECT_DIR$/src/main/connection/DatabaseConnection.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Part 1 of cleaning up the code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sql/finance_management.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sql/finance_management.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -445,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584829686967</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Part 1 of cleaning up the code">
+      <created>1584834471193</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1584834471193</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -470,7 +476,8 @@
     <MESSAGE value="Open main window on successful login feature done" />
     <MESSAGE value="Created menu item button which loads previous transactions&#10;&#10;I haven't solved the issue with getting it to populate the table on main window opening, however I'm working on a solution." />
     <MESSAGE value="updated SQL setup file" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated SQL setup file" />
+    <MESSAGE value="Part 1 of cleaning up the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part 1 of cleaning up the code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="506" y="176" width="898" height="695" key="#AccountTests.testAccountDepositNewBalance" timestamp="1582400149105">
@@ -531,12 +538,12 @@
     </state>
     <state x="713" y="27" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.998@0.27.1920.998" timestamp="1583945186913" />
     <state x="713" y="400" width="484" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493579192" />
-    <state x="498" y="171" width="824" height="725" key="CommitChangelistDialog2" timestamp="1584829686848">
+    <state x="498" y="171" width="824" height="725" key="CommitChangelistDialog2" timestamp="1584834471078">
       <screen x="0" y="355" width="1920" height="725" />
     </state>
     <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2/0.27.1920.998@0.27.1920.998" timestamp="1582400191726" />
     <state x="2100" y="82" width="824" height="998" key="CommitChangelistDialog2/0.355.1920.998/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584119701906" />
-    <state x="498" y="171" width="824" height="725" key="CommitChangelistDialog2/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584829686848" />
+    <state x="498" y="171" width="824" height="725" key="CommitChangelistDialog2/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584834471078" />
     <state x="180" y="46" width="824" height="776" key="CommitChangelistDialog2/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493648887" />
     <state x="376" y="52" width="735" height="547" key="FileChooserDialogImpl" timestamp="1582494056134">
       <screen x="0" y="643" width="1920" height="437" />
@@ -615,19 +622,19 @@
     <state x="1956" y="387" width="1015" height="845" key="SettingsEditor/1920.328.1920.1080/0.355.1920.725@1920.328.1920.1080" timestamp="1584326804422" />
     <state x="471" y="209" width="855" height="559" key="SettingsEditor/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582492950265" />
     <state x="497" y="93" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1578162227059" />
-    <state x="298" y="657" width="344" height="156" key="VCS.ChangelistChooser" timestamp="1584829694750">
+    <state x="298" y="657" width="334" height="156" key="VCS.ChangelistChooser" timestamp="1584834478868">
       <screen x="0" y="355" width="1920" height="725" />
     </state>
     <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser/0.27.1920.998@0.27.1920.998" timestamp="1582400210312" />
     <state x="2218" y="450" key="VCS.ChangelistChooser/0.355.1920.998/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584119712422" />
-    <state x="298" y="657" width="344" height="156" key="VCS.ChangelistChooser/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584829694750" />
+    <state x="298" y="657" width="334" height="156" key="VCS.ChangelistChooser/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584834478868" />
     <state x="298" y="825" width="354" height="160" key="VCS.ChangelistChooser/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493661458" />
-    <state x="75" y="410" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1584829688143">
+    <state x="75" y="410" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1584834472586">
       <screen x="0" y="355" width="1920" height="725" />
     </state>
     <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2/0.27.1920.998@0.27.1920.998" timestamp="1582400197485" />
     <state x="1995" y="82" width="800" height="998" key="Vcs.Push.Dialog.v2/0.355.1920.998/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584119704808" />
-    <state x="75" y="410" width="800" height="524" key="Vcs.Push.Dialog.v2/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584829688143" />
+    <state x="75" y="410" width="800" height="524" key="Vcs.Push.Dialog.v2/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584834472586" />
     <state x="75" y="643" width="800" height="433" key="Vcs.Push.Dialog.v2/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493652351" />
     <state x="732" y="27" width="446" height="433" key="chooseDestDirectoryDialog" timestamp="1583945161310">
       <screen x="0" y="27" width="1920" height="998" />
