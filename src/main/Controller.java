@@ -18,16 +18,14 @@ import java.sql.*;
 
 public class Controller {
 
-    private final String USERNAME = "root";
-    private final String PASSWORD = "";
-    private final String CONNECTION = "jdbc:mysql://localhost/finance_management";
-
     //=================================================================================================================
     // Class Attributes
     //=================================================================================================================
     // Our new account object
-    Account new_account = new Account(1, "", 0, 1.5);
-
+    static Account new_account = new Account(1, "", 0, 1.5);
+    private final String USERNAME = "root";
+    private final String PASSWORD = "";
+    private final String CONNECTION = "jdbc:mysql://localhost/finance_management";
     @FXML
     private TextField new_transaction_amount_field;
     @FXML
@@ -58,7 +56,7 @@ public class Controller {
     @FXML
     public void handleLoginSubmit() throws SQLException {
         final String username = login_username_field.getText();
-        final String query = "SELECT username, passwd FROM accounts WHERE (username) LIKE (?)";
+        final String query = "SELECT username, passwd, accountID FROM accounts WHERE (username) LIKE (?)";
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -70,10 +68,14 @@ public class Controller {
                 String password = rs.getString("passwd").toString();
                 if (password.equals(login_password_field.getText())) {
                     Stage primaryStage = new Stage();
+                    primaryStage.close();
                     Parent root = FXMLLoader.load(getClass().getResource("/FXML/Main.fxml"));
                     Scene scene = new Scene(root);
                     primaryStage.setScene(scene);
                     primaryStage.show();
+                    LoginSuccess(rs.getString("username"));
+                    new_account.setId(rs.getInt("accountID"));
+                    this.loadBalance(new_account.getId());
                 } else {
                     LoginFailure();
                 }
@@ -91,7 +93,7 @@ public class Controller {
         }
     }
 
-    public void LoginSuccess(String username) throws IOException {
+    public void LoginSuccess(String username) throws IOException, SQLException {
         System.out.println("Login success! Welcome, " + username + "!");
     }
 
@@ -155,6 +157,7 @@ public class Controller {
             }
             // execute our statement
             statement.execute();
+            this.updateBalance(new_account.getId(), new_account.getBalance());
 
         } catch (NullPointerException exception) {
             alert(Alert.AlertType.ERROR, "Please enter a valid number in the amount box, make sure something is in description," +
@@ -198,8 +201,44 @@ public class Controller {
     //================================================================================================================
 */
 
-    private void saveTransaction(char transactionType, double amount) {
+    private void loadBalance(int accountID) throws SQLException {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
+            statement = connection.prepareStatement("SELECT balance FROM accounts WHERE accountID = " + new_account.getId());
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            new_account.setBalance(resultSet.getDouble("balance"));
+        } catch (SQLException ex) {
+            System.out.print(ex);
+        } finally {
+            if (statement != null) {
+                statement.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        }
+    }
 
+    private void updateBalance(int accountID, double balance) throws SQLException {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
+            statement = connection.prepareStatement("UPDATE accounts SET balance = " + balance + " WHERE accountID = " + accountID);
+            statement.execute();
+        } catch (SQLException e) {
+            System.out.print(e);
+        } finally {
+            if (statement != null) {
+                statement.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        }
     }
 
     private void alert(Alert.AlertType alertType, String alertText) {
