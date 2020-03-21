@@ -1,6 +1,7 @@
 import FXML.Account;
 import FXML.Transaction;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,17 +13,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.*;
 
-/*
-    This is our controller.
- */
 
 public class Controller {
 
+    // Our new account object
+    static Account current_account = null;
     //=================================================================================================================
     // Class Attributes
     //=================================================================================================================
-    // Our new account object
-    static Account new_account = new Account(1, "", 0, 1.5);
     private final String USERNAME = "root";
     private final String PASSWORD = "";
     private final String CONNECTION = "jdbc:mysql://localhost/finance_management";
@@ -34,6 +32,9 @@ public class Controller {
     private ChoiceBox new_transaction_type_choice;
     @FXML
     private TableView<TransactionView> tableView;
+
+    private ObservableList<TransactionView> viewable_data = FXCollections.observableArrayList();
+
     @FXML
     private ChoiceBox alterDataChoice;
     @FXML
@@ -73,9 +74,9 @@ public class Controller {
                     Scene scene = new Scene(root);
                     primaryStage.setScene(scene);
                     primaryStage.show();
-                    LoginSuccess(rs.getString("username"));
-                    new_account.setId(rs.getInt("accountID"));
-                    this.loadBalance(new_account.getId());
+                    int accountID = rs.getInt("accountID");
+                    current_account = new Account(accountID, rs.getString("username"), 0, 1.5);
+                    this.loadBalance(current_account.getId());
                 } else {
                     LoginFailure();
                 }
@@ -112,21 +113,19 @@ public class Controller {
 
     @FXML
     public void handleSubmitTransactionAction() throws SQLException {
-        Connection connection = null;
+        Connection current_db_connection = null;
         PreparedStatement statement = null;
-        int id = new_account.getId();
+        int id = current_account.getId();
         try {
             //by default data stored in a text field on the gui is stored as a string, so we're converting to a double
             double amount = Double.parseDouble(new_transaction_amount_field.getText());
-            ObservableList<TransactionView> viewable_data = tableView.getItems();
-
-            connection = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
-            String query = "INSERT INTO transactions (accountID, date, type, amount, description)" +
-                    " values (?, ?, ?, ?, ?)";
+            current_db_connection = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
+            String query = "INSERT INTO transactions (accountID, date, type, amount, description, balance)" +
+                    " values (?, ?, ?, ?, ?, ?)";
 
             // PreparedStatement is going to save us creating a whole new statement dependent on transaction type.
             // Set our initial query variables that we know up to this point.
-            statement = connection.prepareStatement(query);
+            statement = current_db_connection.prepareStatement(query);
             statement.setInt(1, id);
             statement.setDate(2, new java.sql.Date(new java.util.Date().getTime()));
             statement.setDouble(4, amount);
@@ -134,7 +133,7 @@ public class Controller {
 
 
             if (new_transaction_type_choice.getSelectionModel().getSelectedItem().toString().equals("Deposit")) {
-                Transaction transaction = new_account.deposit(amount, new_transaction_description_field.getText());
+                Transaction transaction = current_account.deposit(amount, new_transaction_description_field.getText());
                 viewable_data.add(new TransactionView(String.valueOf(transaction.getType()), String.valueOf(transaction.getDate()),
                         String.valueOf(transaction.getAmount()), String.valueOf(transaction.getDescription()),
                         String.valueOf(transaction.getBalance())));
@@ -142,8 +141,8 @@ public class Controller {
             }
             if (new_transaction_type_choice.getSelectionModel().getSelectedItem().toString().equals("Withdraw")) {
                 // checks to make sure the user has enough money in their account.
-                if (new_account.getBalance() >= amount) {
-                    Transaction transaction = new_account.withdraw(amount, new_transaction_description_field.getText());
+                if (current_account.getBalance() >= amount) {
+                    Transaction transaction = current_account.withdraw(amount, new_transaction_description_field.getText());
                     viewable_data.add(new TransactionView(String.valueOf(transaction.getType()), String.valueOf(transaction.getDate()),
                             String.valueOf(transaction.getAmount()), String.valueOf(transaction.getDescription()),
                             String.valueOf(transaction.getBalance())));
@@ -155,9 +154,10 @@ public class Controller {
                     alert(Alert.AlertType.ERROR, "There isn't enough money in your account to complete this transaction!");
                 }
             }
+            statement.setDouble(6,current_account.getBalance());
             // execute our statement
             statement.execute();
-            this.updateBalance(new_account.getId(), new_account.getBalance());
+            this.updateBalance(current_account.getId(), current_account.getBalance());
 
         } catch (NullPointerException exception) {
             alert(Alert.AlertType.ERROR, "Please enter a valid number in the amount box, make sure something is in description," +
@@ -172,44 +172,22 @@ public class Controller {
             if (statement != null) {
                 statement.close();
             }
-            if (connection != null) {
-                connection.close();
+            if (current_db_connection != null) {
+                current_db_connection.close();
             }
         }
+        tableView.setItems(viewable_data);
     }
-/*
-    @main.FXML
-    public void handleAlterDataAction(){
-        try {
-
-            if (alterDataChoice.getSelectionModel().getSelectedItem().toString().equals("Edit Description")) {
-                if(editDescriptionArea.getText().equals("")){
-                    System.out.println("New Description!");
-                }else{
-                    alert(Alert.AlertType.ERROR,
-                            "Please enter some data in the text box for the new description!");
-                }
-            } else if (alterDataChoice.getSelectionModel().getSelectedItem().toString().equals("Delete Record")) {
-                System.out.println("Delete Record");
-            }
-        }
-
-        catch(NullPointerException exception){
-            Alert errorAlert = new Alert(Alert.AlertType.ERROR, "Make sure to select an option!");
-        }
-    }
-    //================================================================================================================
-*/
 
     private void loadBalance(int accountID) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
             connection = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
-            statement = connection.prepareStatement("SELECT balance FROM accounts WHERE accountID = " + new_account.getId());
+            statement = connection.prepareStatement("SELECT balance FROM accounts WHERE accountID = " + current_account.getId());
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
-            new_account.setBalance(resultSet.getDouble("balance"));
+            current_account.setBalance(resultSet.getDouble("balance"));
         } catch (SQLException ex) {
             System.out.print(ex);
         } finally {
@@ -237,6 +215,35 @@ public class Controller {
             }
             if (connection != null) {
                 connection.close();
+            }
+        }
+    }
+
+    @FXML
+    private void populateTableOnLoad() throws SQLException{
+        PreparedStatement statement = null;
+        Connection current_db_connection = null;
+        try{
+            current_db_connection = DriverManager.getConnection(CONNECTION, USERNAME, PASSWORD);
+            statement = current_db_connection.prepareStatement("SELECT type, date, amount, description, balance FROM transactions" +
+                    " WHERE accountID LIKE " + current_account.getId()+" ORDER BY transactionID;");
+            ResultSet resultSet = statement.executeQuery();
+            while(resultSet.next()){
+                this.viewable_data.add(new TransactionView(resultSet.getString(1),
+                        String.valueOf(resultSet.getDate(2)),
+                        String.valueOf(resultSet.getDouble(3)),
+                        resultSet.getString(4),
+                        String.valueOf(resultSet.getDouble(5))));
+            }
+            this.tableView.setItems(this.viewable_data);
+        } catch (Exception e) {
+            System.out.println(e + " in populateTableOnLoad() method");
+        } finally {
+            if (statement != null) {
+                statement.close();
+            }
+            if (current_db_connection != null) {
+                current_db_connection.close();
             }
         }
     }
