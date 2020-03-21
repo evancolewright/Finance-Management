@@ -458,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584834524427</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="deleted unnecessary SQL">
+      <created>1584834576945</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1584834576945</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -546,12 +553,12 @@
     </state>
     <state x="713" y="27" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.998@0.27.1920.998" timestamp="1583945186913" />
     <state x="713" y="400" width="484" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493579192" />
-    <state x="498" y="171" width="824" height="725" key="CommitChangelistDialog2" timestamp="1584834524375">
+    <state x="498" y="171" width="824" height="725" key="CommitChangelistDialog2" timestamp="1584834576879">
       <screen x="0" y="355" width="1920" height="725" />
     </state>
     <state x="63" y="121" width="824" height="806" key="CommitChangelistDialog2/0.27.1920.998@0.27.1920.998" timestamp="1582400191726" />
     <state x="2100" y="82" width="824" height="998" key="CommitChangelistDialog2/0.355.1920.998/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584119701906" />
-    <state x="498" y="171" width="824" height="725" key="CommitChangelistDialog2/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584834524375" />
+    <state x="498" y="171" width="824" height="725" key="CommitChangelistDialog2/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584834576879" />
     <state x="180" y="46" width="824" height="776" key="CommitChangelistDialog2/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493648887" />
     <state x="376" y="52" width="735" height="547" key="FileChooserDialogImpl" timestamp="1582494056134">
       <screen x="0" y="643" width="1920" height="437" />
@@ -630,19 +637,19 @@
     <state x="1956" y="387" width="1015" height="845" key="SettingsEditor/1920.328.1920.1080/0.355.1920.725@1920.328.1920.1080" timestamp="1584326804422" />
     <state x="471" y="209" width="855" height="559" key="SettingsEditor/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582492950265" />
     <state x="497" y="93" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1578162227059" />
-    <state x="298" y="657" width="334" height="156" key="VCS.ChangelistChooser" timestamp="1584834532232">
+    <state x="298" y="657" width="334" height="156" key="VCS.ChangelistChooser" timestamp="1584834584693">
       <screen x="0" y="355" width="1920" height="725" />
     </state>
     <state x="298" y="443" width="354" height="162" key="VCS.ChangelistChooser/0.27.1920.998@0.27.1920.998" timestamp="1582400210312" />
     <state x="2218" y="450" key="VCS.ChangelistChooser/0.355.1920.998/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584119712422" />
-    <state x="298" y="657" width="334" height="156" key="VCS.ChangelistChooser/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584834532232" />
+    <state x="298" y="657" width="334" height="156" key="VCS.ChangelistChooser/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584834584693" />
     <state x="298" y="825" width="354" height="160" key="VCS.ChangelistChooser/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493661458" />
-    <state x="75" y="410" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1584834525814">
+    <state x="75" y="410" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1584834578198">
       <screen x="0" y="355" width="1920" height="725" />
     </state>
     <state x="75" y="262" width="800" height="524" key="Vcs.Push.Dialog.v2/0.27.1920.998@0.27.1920.998" timestamp="1582400197485" />
     <state x="1995" y="82" width="800" height="998" key="Vcs.Push.Dialog.v2/0.355.1920.998/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584119704808" />
-    <state x="75" y="410" width="800" height="524" key="Vcs.Push.Dialog.v2/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584834525814" />
+    <state x="75" y="410" width="800" height="524" key="Vcs.Push.Dialog.v2/1920.328.1920.1080/0.355.1920.725@0.355.1920.725" timestamp="1584834578198" />
     <state x="75" y="643" width="800" height="433" key="Vcs.Push.Dialog.v2/1920.616.1920.1080/0.643.1920.437@0.643.1920.437" timestamp="1582493652351" />
     <state x="732" y="27" width="446" height="433" key="chooseDestDirectoryDialog" timestamp="1583945161310">
       <screen x="0" y="27" width="1920" height="998" />
